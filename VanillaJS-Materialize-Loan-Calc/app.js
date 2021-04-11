@@ -16,7 +16,7 @@ document.querySelector('#calculateForm').addEventListener('submit', function(e) 
 });
 
 function calculateResults(e) {
-   debugger;
+  
   let amount   = loanInput.value;
   let years    = yearsInput.value;
   let interest = interestInput.value;
