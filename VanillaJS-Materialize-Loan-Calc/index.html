@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="src/css/materialize.min.css"  media="screen,projection"/>
+  <title>fatihaydin!</title>
+  <style>
+    .disable {
+      background-color: gainsboro !important;
+      color: blue;
+      text-align: center;
+      font-weight: bold;
+    }
+    input{
+      margin-top: 4px !important;
+    }
+    label {
+     color: #000 !important;
+   }
+    .input-field input[type=text]:focus {
+     border-bottom: 1px solid #304ffe   !important;
+     box-shadow: 0 1px 0 0 #304ffe   !important;
+   }
+   .input-field .prefix.active {
+     color: #304ffe   !important;
+   }
+  </style>
+</head>
+<body>
+  <div class="row" style="margin-top: 80px;">
+    <div class="col s3"></div>
+    <div class="col s6"> 
+
+      <h3 class="header">Loan Calculator</h3>
+      <div class="card">
+        <div class="card-content dark-text">
+          <div class="row">
+            <form class="col s12" id="calculateForm">
+              <div class="row">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">attach_money</i>
+                  <input id="loan" type="text" class="validate" required>
+                  <label for="money_label">Loan Amount</label>
+                </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">%</i>
+                  <input id="interest" type="text" class="validate" required>
+                  <label for="interest_label">Interest</label>
+                </div>
+                <div class="col s12">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">date_range</i>
+                    <input id="years" type="text" class="validate" required>
+                    <label for="years_label">Years To Repay</label>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" id="calculate" class="waves-effect waves-light indigo accent-4 btn-small" style="width: 100%;">Calculate</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+      <div id="loading" style="text-align: center; display: none; margin-top: 16px;" >
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" id="results">
+        <div class="col s12">
+          <div class="card horizontal">
+            <div class="card-stacked">
+              <div class="card-content">
+                <div class="row">
+                  <div class="input-field col s4">
+                    <input placeholder="" id="monthly_payment" type="text" class="validate disable" readonly>
+                    <label for="monthly_payment">Monthly Payment</label>
+                  </div>
+                  <div class="input-field col s4">
+                    <input placeholder="" id="total_payment" type="text" class="validate disable" readonly>
+                    <label for="total_payment">Total Payment</label>
+                  </div>
+                  <div class="input-field col s4">
+                    <input placeholder="" id="total_interest" type="text" class="validate disable" readonly>
+                    <label for="total_interest">Total Interest</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col s3"></div>
+  </div>
+  <script type="text/javascript" src="src/js/materialize.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
